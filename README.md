@@ -27,3 +27,7 @@ Notion: https://kimsoobin1602.notion.site/217957a41faf8011aaa8da76eec79cb0?sourc
 구글폼: https://forms.gle/Py3kLEcSf1SBSGG78
 
 장현우
+
+과제 5: MVC 패턴 학습, Controller Service Repository
+
+https://velog.io/@kari14/3%EC%A3%BC%EC%B0%A8-%EC%A0%84%ED%99%98%EA%B3%BC%EC%A0%9C-MVC-%ED%8C%A8%ED%84%B4-%EA%B3%B5%EB%B6%80%ED%95%98%EA%B8%B0
