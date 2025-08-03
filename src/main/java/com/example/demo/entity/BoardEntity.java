@@ -3,11 +3,13 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity @Table(name = "posts")
+@Entity
+@Table(name = "posts")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Builder                // ← builder() 메서드 생성
-public class BoardEntity {
+public class BoardEntity extends BaseEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -17,12 +19,6 @@ public class BoardEntity {
 
     @Lob @Column(nullable = false)
     private String content;
-
-    public BoardEntity(Long id, String title, String content) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-    }
 
     public void update(String title, String content) {
         this.title = title;

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/header :: layout(~{::section})}">
+<meta charset="UTF-8">
+<section id="main">
+    <h2>글 수정</h2>
+
+    <form th:action="@{/board/{id}(id=${post.id})}" method="post">
+        <input type="hidden" name="_method" value="patch"/> <!-- HiddenHttpMethodFilter -->
+        <div class="mb-3">
+            <label class="form-label">제목</label>
+            <input type="text" name="title" class="form-control" th:value="${post.title}" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">내용</label>
+            <textarea name="content" rows="10" class="form-control" th:text="${post.content}" required></textarea>
+        </div>
+        <button class="btn btn-primary">수정</button>
+    </form>
+</section>
+</html>

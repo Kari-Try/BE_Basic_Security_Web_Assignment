@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/header :: layout(~{::section})}">
+<meta charset="UTF-8">
+<section id="main">
+    <h2 th:text="${post.title}">제목</h2>
+
+    <p class="text-muted" th:text="${#temporals.format(post.createdAt,'yyyy-MM-dd HH:mm')}"></p>
+    <pre class="border p-3" th:text="${post.content}">내용</pre>
+
+    <a th:href="@{/board/{id}/edit(id=${post.id})}" class="btn btn-primary me-2">수정</a>
+    <form th:action="@{/board/{id}(id=${post.id})}" method="post"
+          onsubmit="return confirm('정말 삭제하시겠습니까?');">
+        <input type="hidden" name="_method" value="delete"/>   <!-- ★ 핵심 -->
+        <button class="btn btn-danger">삭제</button>
+    </form>
+
+</section>
+</html>
